@@ -21,13 +21,6 @@ export default function SelectedOption(props) {
   }
   return (
     <li className="PowerSelectMultiple__SelectedOption">
-      <span className="PowerSelectMultiple__SelectedOption__Label">
-        {selectedOptionComponent ? (
-          renderComponent(selectedOptionComponent, { option, select })
-        ) : (
-          value
-        )}
-      </span>
       {showOptionClose ? (
         <span
           className="PowerSelectMultiple__SelectedOption__Close"
@@ -39,6 +32,11 @@ export default function SelectedOption(props) {
           ×
         </span>
       ) : null}
+      <span className="PowerSelectMultiple__SelectedOption__Label">
+        {selectedOptionComponent
+          ? renderComponent(selectedOptionComponent, { option, select })
+          : value}
+      </span>
     </li>
   );
 }
