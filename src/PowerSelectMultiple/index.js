@@ -31,7 +31,13 @@ export default class PowerSelectMultiple extends Component {
   };
 
   filterOptions(options, selected, callback) {
-    let filteredOptions = options.filter(option => selected.indexOf(option) === -1);
+    let filteredOptions = [];
+    if(this.props.filterSelectedOptions){
+      filteredOptions = options.filter(option => selected.indexOf(option) === -1);
+    }
+    else{
+      filteredOptions = [...options];
+    }
     this.setState({ filteredOptions }, callback);
   }
 
@@ -94,7 +100,7 @@ export default class PowerSelectMultiple extends Component {
         {...rest}
         options={this.state.filteredOptions}
         onChange={this.handleOnChange}
-        closeOnSelect={false}
+        closeOnSelect={this.props.closeOnSelect}
         onKeyDown={this.handleKeyDown}
       />
     );

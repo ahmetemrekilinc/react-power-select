@@ -33,6 +33,7 @@ export default class SelectTrigger extends Component {
       handleOnFocus,
       handleOnBlur,
       selectedOptionComponent,
+      searchEnabled,
       ...rest
     } = this.props;
     let selected = selectedOption || [];
@@ -58,21 +59,24 @@ export default class SelectTrigger extends Component {
                 />
               );
             })}
-            <li className="PowerSelectMultiple_TriggerInputContainer">
-              <AutoResizeInput
-                className="PowerSelect__TriggerInput"
-                autoComplete="off"
-                spellCheck="false"
-                placeholder={selected.length ? '' : placeholder}
-                value={this.state.value}
-                disabled={disabled}
-                autoFocus={autoFocus}
-                onChange={handleOnChange}
-                onKeyDown={handleKeyDown}
-                onFocus={handleOnFocus}
-                onBlur={handleOnBlur}
-              />
-            </li>
+            {searchEnabled && (
+              <li className="PowerSelectMultiple_TriggerInputContainer">
+                <AutoResizeInput
+                  className="PowerSelect__TriggerInput"
+                  autoComplete="off"
+                  spellCheck="false"
+                  placeholder={selected.length ? '' : placeholder}
+                  value={this.state.value}
+                  disabled={disabled}
+                  autoFocus={autoFocus}
+                  onChange={handleOnChange}
+                  onKeyDown={handleKeyDown}
+                  onFocus={handleOnFocus}
+                  onBlur={handleOnBlur}
+                />
+              </li>
+            )}
+
           </ul>
         </div>
       </TriggerWrapper>
@@ -82,4 +86,5 @@ export default class SelectTrigger extends Component {
 
 SelectTrigger.defaultProps = {
   onOptionCloseClick: () => {},
+  searchEnabled: true
 };

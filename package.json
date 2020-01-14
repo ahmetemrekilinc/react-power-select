@@ -1,13 +1,13 @@
 {
-  "name": "react-power-select",
-  "version": "1.0.0-beta.17",
+  "name": "react-power-select-multiple-for-single",
+  "version": "1.0.0",
   "description": "A highly composable & reusable select component in react",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
-    "clean": "rm -rf lib",
+    "clean": "rimraf lib",
     "build:commonjs": "babel src/ --out-dir lib/",
-    "build": "npm run clean && npm run build:commonjs && webpack && rm -rf dist/css.js",
+    "build": "npm run clean && npm run build:commonjs && webpack && rimraf dist/css.js",
     "prepublish": "npm run build",
     "precommit": "lint-staged",
     "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
