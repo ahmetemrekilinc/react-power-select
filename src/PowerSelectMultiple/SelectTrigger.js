@@ -76,7 +76,6 @@ export default class SelectTrigger extends Component {
                 />
               </li>
             )}
-
           </ul>
         </div>
       </TriggerWrapper>
@@ -86,5 +85,6 @@ export default class SelectTrigger extends Component {
 
 SelectTrigger.defaultProps = {
   onOptionCloseClick: () => {},
-  searchEnabled: true
+  showOptionClose: true,
+  searchEnabled: true,
 };

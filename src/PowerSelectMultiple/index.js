@@ -32,10 +32,9 @@ export default class PowerSelectMultiple extends Component {
 
   filterOptions(options, selected, callback) {
     let filteredOptions = [];
-    if(this.props.filterSelectedOptions){
+    if (this.props.filterSelectedOptions) {
       filteredOptions = options.filter(option => selected.indexOf(option) === -1);
-    }
-    else{
+    } else {
       filteredOptions = [...options];
     }
     this.setState({ filteredOptions }, callback);
@@ -92,7 +91,8 @@ export default class PowerSelectMultiple extends Component {
         triggerComponent={props => (
           <MultiSelectTrigger
             {...props}
-            showOptionClose={true}
+            showOptionClose={this.props.showOptionClose}
+            searchEnabled={this.props.searchEnabled}
             onOptionCloseClick={this.removeOption}
             onClearClick={this.handleClearClick}
           />
