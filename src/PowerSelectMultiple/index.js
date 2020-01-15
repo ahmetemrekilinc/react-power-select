@@ -44,15 +44,6 @@ export default class PowerSelectMultiple extends Component {
     if (event.which === 8) {
       let { selected, onChange } = this.props;
       let value = event.target.value;
-      if (value === '' && selected.length) {
-        let options = selected.slice(0, selected.length - 1);
-        onChange({
-          options,
-          select,
-        });
-        select.actions.open();
-        select.actions.focus();
-      }
     }
     if (this.props.onKeyDown) {
       this.props.onKeyDown(event, { select });
