@@ -4,16 +4,6 @@ import SelectedOption from './SelectedOption';
 import TriggerWrapper from '../TriggerWrapper';
 
 export default class SelectTrigger extends Component {
-  state = {
-    value: '',
-  };
-
-  componentWillReceiveProps(nextProps) {
-    let value = nextProps.searchTerm !== null ? nextProps.searchTerm : '';
-    this.setState({
-      value,
-    });
-  }
 
   handleClearClick = event => {
     this.props.onClearClick(event, { select: this.props.select });
@@ -66,7 +56,7 @@ export default class SelectTrigger extends Component {
                   autoComplete="off"
                   spellCheck="false"
                   placeholder={selected.length ? '' : placeholder}
-                  value={this.state.value}
+                  value={this.props.searchTerm ? this.props.searchTerm : ''}
                   disabled={disabled}
                   autoFocus={autoFocus}
                   onChange={handleOnChange}
@@ -87,4 +77,5 @@ SelectTrigger.defaultProps = {
   onOptionCloseClick: () => {},
   showOptionClose: true,
   searchEnabled: true,
+  searchTerm: ''
 };

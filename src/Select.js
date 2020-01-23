@@ -52,6 +52,7 @@ export default class Select extends Component {
     if (this.props.options !== options) {
       this.setState({
         filteredOptions: options,
+        searchTerm: options.searchTerm
       });
     }
   }
