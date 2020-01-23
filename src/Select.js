@@ -47,12 +47,12 @@ export default class Select extends Component {
     this.flattenOptions(this.props.options);
   }
 
-  componentWillReceiveProps({ options }) {
+  componentWillReceiveProps({ options, searchTerm }) {
     this.flattenOptions(options);
     if (this.props.options !== options) {
       this.setState({
         filteredOptions: options,
-        searchTerm: options.searchTerm
+        searchTerm: searchTerm,
       });
     }
   }
