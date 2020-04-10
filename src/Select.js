@@ -224,7 +224,7 @@ export default class Select extends Component {
 
   handleEnterPress(event, highlightedOption) {
     if (this.state.isOpen) {
-      this.selectOption(this.state.searchTerm);
+      this.selectOption(highlightedOption);
       if (this.props.handleEnterPressCode) {
         this.props.handleEnterPressCode(this.state.searchTerm);
       }
