@@ -1,7 +1,7 @@
 {
   "name": "react-power-select-multiple-for-single",
-  "version": "1.0.5",
-  "description": "A highly composable & reusable select component in react",
+  "version": "1.1.0",
+  "description": "React multi select usage for single select of component react-power-select",
   "main": "lib/index.js",
   "scripts": {
     "test": "jest",
@@ -54,12 +54,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/selvagsz/react-power-select.git"
+    "url": "git+https://github.com/ahmetemrekilinc/react-power-select.git"
   },
-  "author": "selvagsz (selvaganeshbsg@gmail.com)",
+  "author": "ahmetemrekilinc (aekilinc@gmail.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/selvagsz/react-power-select/issues"
+    "url": "https://github.com/ahmetemrekilinc/react-power-select/issues"
   },
   "keywords": [
     "react-power-select",
@@ -73,7 +73,7 @@
     "lib",
     "dist"
   ],
-  "homepage": "https://github.com/selvagsz/react-power-select#readme",
+  "homepage": "https://github.com/ahmetemrekilinc/react-power-select#readme",
   "devDependencies": {
     "@storybook/addon-actions": "^3.4.0",
     "@storybook/addon-knobs": "^3.4.0",

@@ -47,12 +47,11 @@ export default class Select extends Component {
     this.flattenOptions(this.props.options);
   }
 
-  componentWillReceiveProps({ options, searchTerm }) {
+  componentWillReceiveProps({ options }) {
     this.flattenOptions(options);
     if (this.props.options !== options) {
       this.setState({
         filteredOptions: options,
-        searchTerm: searchTerm,
       });
     }
   }
@@ -154,7 +153,9 @@ export default class Select extends Component {
 
   focusField = () => {
     this.focusFieldTimeout = setTimeout(() => {
-      this.powerselect.focus();
+      if (this.powerselect) {
+        this.powerselect.focus();
+      }
     });
   };
 
@@ -223,7 +224,10 @@ export default class Select extends Component {
 
   handleEnterPress(event, highlightedOption) {
     if (this.state.isOpen) {
-      this.selectOption(highlightedOption);
+      this.selectOption(this.state.searchTerm);
+      if (this.props.handleEnterPressCode) {
+        this.props.handleEnterPressCode(this.state.searchTerm);
+      }
       this.focusField();
       this.resetSearchAndClose();
     }

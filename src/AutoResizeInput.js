@@ -21,7 +21,7 @@ export default class AutoResizeInput extends Component {
 
   setInputSize(value) {
     this.setState({
-      length: value.length + 4,
+      length: value.length + 1,
     });
   }
 
