@@ -224,9 +224,8 @@ export default class Select extends Component {
 
   handleEnterPress(event, highlightedOption) {
     if (this.state.isOpen) {
-      this.selectOption(highlightedOption);
-      if (this.props.handleEnterPressCode) {
-        this.props.handleEnterPressCode(this.state.searchTerm);
+      if (!this.props.isTagInput) {
+        this.selectOption(highlightedOption);
       }
       this.focusField();
       this.resetSearchAndClose();
@@ -430,6 +429,7 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
+  isTagInput: false,
   options: [],
   disabled: false,
   tabIndex: 0,
